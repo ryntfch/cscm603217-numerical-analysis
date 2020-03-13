@@ -11,18 +11,19 @@ funcs = {
 
 tols = { 10e-4; 10e-6; 10e-8; 10e-10; 10e-12};
 
-xs = {
-    {1; 100};
-    {1000; 9999};
-    {20; 9999};
-    {5; 20};
-    {1; 23}
+xss = {
+    { {1; 100}; {24; 24}; {20; 12}; {5; 20}; {1; 23} };
+    { {4; 56}; {12; 21}; {20; 45}; {5; 20}; {1; 23} };
+    { {1; 2}; {29; 92}; {20; 4}; {5; 20}; {1; 23} };
+    { {2; 4}; {92; 29}; {20; 9999}; {5; 20}; {1; 23} };
+    { {1; 1}; {12; 54}; {20; 9999}; {5; 20}; {1; 23} };
 };
 
 fprintf("\n\\documentclass{article}\n\\usepackage[utf8]{inputenc}\n\n\\title{Tugas 2 Anum}\n\\author{author}\n\\date{March 2020}\n\n\\usepackage{natbib}\n\\usepackage{graphicx}\n\n\\usepackage{geometry}\n\\geometry{a4paper, margin=1cm}\n\n\\begin{document}\n\n\\maketitle\n\n\\section{Secant Method Experiment}")
 
 experiment_no = 1;
 for i=1:size(funcs)(1)
+    xs = xss{i};
     fprintf("\\begin{displaymath}\n%s = 0 \n\\end{displaymath}\n\n\\begin{center}\n", funcs{i})
     for j=1:size(tols)(1)
         for k=1:size(xs)(1)
