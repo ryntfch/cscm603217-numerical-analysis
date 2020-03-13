@@ -1,9 +1,3 @@
-% maximal iteration
-max_itr=1000;
-
-% tolerance
-tol=10^-5;
-
 % total variables to solve
 tot_var=2;
 
