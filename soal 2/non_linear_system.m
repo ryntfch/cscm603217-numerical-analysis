@@ -8,9 +8,9 @@ max_itr=1000;
 tol=10^-5;
 
 loop  = 0;
-maxdx = 1;
+x_diff = 1;
 
-while (loop < max_itr) && (maxdx > tol)
+while (loop < max_itr) && (x_diff > tol)
 
     deriv_func = zeros(tot_var,tot_var);
 
@@ -39,12 +39,13 @@ while (loop < max_itr) && (maxdx > tol)
     dx = error';
 
     temp = x;
-    display("-------------------------");
-    display(loop+1);
-    x = x - dx
-    maxdx = abs(x - temp);
-    
     loop = loop + 1;  
+    display("-------------------------");
+    display(loop);
+    x = x - dx
+    x_diff = abs(x - temp);
+    
+   
     
 end
 
