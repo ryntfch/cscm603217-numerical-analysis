@@ -29,9 +29,9 @@ for i=1:size(funcs)(1)
             func = funcs{i};
             [x, n] = secant(xs{k}{1}, xs{k}{2}, tols{j}, func);
             if (mod(experiment_no, 3) == 0)
-                fprintf("\\begin{tabular}{|c|c|} \n\\hline \n& Value \\\\ \\hline \nGuesses & [%.2f, %.2f] \\\\ \nError Tolerance & $%9.2e$ \\\\ \nRoot & %f \\\\ \\hline \n\\end{tabular}\n\n", xs{k}{1}, xs{k}{2}, tols{j}, x)
+                fprintf("\\begin{tabular}{|c|c|} \n\\hline \n& Value \\\\ \\hline \nGuesses & [%.2f, %.2f] \\\\ \nError Tolerance & $%9.2e$ \\\\ \nRoot & %f \\\\ \nIteration & %d \\\\ \\hline \n\\end{tabular}\n\n", xs{k}{1}, xs{k}{2}, tols{j}, x, n)
             else
-                fprintf("\\begin{tabular}{|c|c|} \n\\hline \n& Value \\\\ \\hline \nGuesses & [%.2f, %.2f] \\\\ \nError Tolerance & $%9.2e$ \\\\ \nRoot & %f \\\\ \\hline \n\\end{tabular}", xs{k}{1}, xs{k}{2}, tols{j}, x)
+                fprintf("\\begin{tabular}{|c|c|} \n\\hline \n& Value \\\\ \\hline \nGuesses & [%.2f, %.2f] \\\\ \nError Tolerance & $%9.2e$ \\\\ \nRoot & %f \\\\ \nIteration & %d \\\\ \\hline \n\\end{tabular}", xs{k}{1}, xs{k}{2}, tols{j}, x, n)
             endif
             experiment_no = experiment_no + 1;
         end
