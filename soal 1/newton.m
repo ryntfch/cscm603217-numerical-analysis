@@ -1,4 +1,5 @@
 function [x, n] = newton(x0, Tol, f, d)
+    format long
 
     % preparation of the function
     fx = str2func(['@(x)', f]);
