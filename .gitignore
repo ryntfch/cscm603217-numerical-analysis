@@ -2,3 +2,5 @@ Archive.zip
 out/
 out/**/*
 DS_Store
+.vs_code
+.vscode
