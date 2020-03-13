@@ -40,15 +40,3 @@ for i=1:size(funcs)(1)
     fprintf("\n\\end{center}\n\n")
 end
 fprintf("\n\\end{document}")
-
-% fprintf("Secant Method\n");
-% experiment_no = 1;
-% for i=1:size(funcs)(1)
-%     for j=1:size(tols)(1)
-%         for k=1:size(xs)(1)
-%             func = funcs{1};
-%             [x, n] = secant(xs{k}{1}, xs{k}{2}, tols{j}, funcs{i});
-%             experiment_no = experiment_no + 1;
-%         end
-%     end
-% end

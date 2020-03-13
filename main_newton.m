@@ -17,31 +17,19 @@ diffs = {"3*x^2+4*x+10";
 
 tols = { 10e-4; 10e-6; 10e-8; 10e-10; 10e-12};
 
-xs = { 2; 20; 20; 5; 1; };
-
-% fprintf("Newton Method\n");
-% experiment_no = 1;
-% for i=1:size(funcs)(1)
-%     for j=1:size(tols)(1)
-%         for k=1:size(xs)(1)
-%             func = funcs{i};
-%             derivate = diffs{i};
-%             [x, n] = newton(xs{k}, tols{j}, func, derivate);
-%             printf("\nexperiment no:  %d\n", experiment_no);
-%             printf("function %s\n", func);
-%             printf("guess x: %.50g\n", xs{k});
-%             printf("tol: %.50g\n", tols{j}); 
-%             printf("iterations: %.50g\n", n); 
-%             printf("x: %.50g\n", x); 
-%             experiment_no = experiment_no + 1;
-%         end
-%     end
-% end
+xss = { 
+    {0; 2; 4; 3; -1; };
+    {1; 2; 3; 4; 5; };
+    {2; 20; 21; 5; 1; };
+    {0; 1; 2; 3; 4; };
+    {0; 1; -1; 5; 4; };
+};
 
 fprintf("\n\\documentclass{article}\n\\usepackage[utf8]{inputenc}\n\n\\title{Tugas 2 Anum}\n\\author{author}\n\\date{March 2020}\n\n\\usepackage{natbib}\n\\usepackage{graphicx}\n\n\\usepackage{geometry}\n\\geometry{a4paper, margin=1cm}\n\n\\begin{document}\n\n\\maketitle\n\n\\section{Newton Method Experiment}")
 
 experiment_no = 1;
 for i=1:size(funcs)(1)
+    xs = xss{i};
     fprintf("\\begin{displaymath}\n%s = 0 \n\\end{displaymath}\n\n\\begin{center}\n", funcs{i})
     for j=1:size(tols)(1)
         for k=1:size(xs)(1)
