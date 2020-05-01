@@ -12,8 +12,8 @@
 % Armijo stepsize rule parameters
   sigma = .1;
   beta = .5;
-  obj=func(x);
-  g=grad(x);
+  obj=funcsixhump(x);
+  g=gradsixhump(x);
   k=0;                                  % k = # iterations
   nf=1;					% nf = # function eval.	
 
@@ -21,17 +21,17 @@
   while  norm(g) > 1e-6    
     d = -g;                   % steepest descent direction
     a = 1;
-    newobj = func(x + a*d);
+    newobj = funcsixhump(x + a*d);
     nf = nf+1;
     while (newobj-obj)/a > sigma*g'*d
       a = a*beta;
-      newobj = func(x + a*d);
+      newobj = funcsixhump(x + a*d);
       nf = nf+1;
     end
     if (mod(k,100)==1) fprintf('%5.0f %5.0f %12.5e \n',k,nf,obj); end
     x = x + a*d;
     obj=newobj;
-    g=grad(x);
+    g=gradsixhump(x);
     k = k + 1;
   end
 
