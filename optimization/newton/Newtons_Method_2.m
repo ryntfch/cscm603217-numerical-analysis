@@ -32,6 +32,8 @@ S = inv(H); % Search Direction
 
 fprintf('Initial value: [%d,%d]\n\n', x(i), y(i));
 
+
+
 % Optimization Condition:
 while norm(J) > e
     I = [x(i),y(i)]';
